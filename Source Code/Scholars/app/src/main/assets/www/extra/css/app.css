@@ -1,0 +1,119 @@
+#header-cust{
+	border:none !important;
+	/*background-color:#106b59;*/
+	background:url(../img/bg.png);
+	background-repeat:repeat-x;
+}
+
+#footer-cust{
+	background-color:#106b59;
+}
+
+#body-cust{
+	background-color:#FFF;
+}
+
+h1{
+	color:#404040;
+}
+
+.index-pict{
+	margin-top:-7px;
+	max-width:auto;
+	max-height:auto;
+}
+
+.ui-btn-active{
+	background-color:#2c8ecd !important;
+	background:none; 
+	border:none; 
+	background-color:transparent;
+	box-shadow:none !important;
+	
+}
+
+.front_image {
+	width:100%;
+}
+
+.logo {
+	background-color:transparent !important;
+	border:none !important;
+	/*width:130px;
+	height:50px;*/
+}
+
+.panel_button {
+	background:blue !important;
+}
+
+.list_icon{
+	float:left; 
+	width:30px;
+	margin:0 10px 5px 0;
+}
+
+.list_font_icon{
+	font-size:30px;
+}
+
+.list_menu{
+	margin-left:30px;
+	padding-top:7px;
+}
+
+/*-- FRONT BOX --*/
+.ui-grid-b-custom{
+	width:100%;
+}
+
+.ui-block-custom{
+	height:auto;
+	margin-left:-20px;
+	margin-top:-30px;
+}
+
+.ui-bar-custom{
+	background-color:transparent;
+	border:none;
+	width:100%;	
+}
+
+.front-href-remover{
+	background-color:transparent;
+	border:none !important; 
+	box-shadow:none;
+}	
+/*-- END FRONT BOX --*/
+
+
+/*-- DETAIL PAGE --*/
+.detail_border_main {
+	border:none !important;
+	background-color:#FFF;
+}
+
+.ui-body-inherit{
+	background-color:transparent !important;
+}
+
+.detail_list{
+	border:none !important;
+	background-color:#f9f9f9 !important;
+	text-shadow:none;
+	color:#252525;
+}
+
+.ui-responsive{
+
+}
+
+.detail-box{
+	width:auto;
+}
+
+.detailtext-box{
+	text-align: left;
+}
+
+/*-- END DETAIL PAGE --*/

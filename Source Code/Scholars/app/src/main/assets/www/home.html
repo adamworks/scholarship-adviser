@@ -1,0 +1,269 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>TEST HYBRID</title>
+    <script type="text/javascript" charset="utf-8" src="cordova-2.4.0.js"></script> <!-- memanggil script cordova/phonegap-->
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css"/> <!-- memanggil jquery mobile.css-->
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href=" extra/css/jquery.mobile-1.4.0.min.css" />
+
+    <link rel="stylesheet" href=" extra/css/responsiveslides.css" />
+    <link type="text/css" rel="stylesheet" href="css/css/jqm-font-awesome-isvg-ipng.min.css" />
+    <link rel="stylesheet" href=" extra/css/app.css" />
+
+    <script src="js/jquery.mobile-1.4.2.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+     function onLoad(){
+     console.log("Device Ready !!!");
+     document.addEventListener("deviceready", onDeviceReady,false);   
+
+     }
+         
+          
+          function pendidikan(){
+               location.href="katpendidikan.html";
+               //$.mobile.changePage('../www/katpendidikan.html');
+          }
+          function negara(){
+               location.href="katnegara.html";
+          }
+          function filter(){
+               location.href="filter.html";
+          }
+          function favorite(){
+               location.href="beasiswaku.html";
+          }
+          function pencarian(){
+                    location.href="search.html";
+          }
+          function refresh(){
+                    //location.href = "searchfx.html";
+                    location.reload();
+          }
+          function jurusan(){
+                    location.href = "katjurusan.html";
+          }
+          function user(){
+            // var nama = localStorage.getItem("username");
+            // $('#usernama').text(nama);
+            
+            //$('#user').append('<h4>'+nama+'</h4>');
+                    location.href = "user.html";
+          }
+          function logout(){
+                    localStorage.clear();
+                    window.location.href="../www/index.html";
+          }
+          // function checkPreAuth() {
+          // var form = $("#loginForm");
+          // if(window.localStorage["username"] != undefined && window.localStorage["password"] != undefined) {
+          // $("#username", form).val(window.localStorage["username"]);
+          // $("#password", form).val(window.localStorage["password"]);
+          // handleLogin();
+          // }
+          // }
+         // function userid(){
+            // var nama = localStorage.getItem("username");
+            // //$('#usernama').append('<p>' + nama + '</p>');
+            // $('#usernama').text(nama);
+
+          //}
+     </script>
+
+</head>
+<body>
+
+<div data-role="page" id="home"> <!-- end of div page1-->
+
+    <div  data-position="fixed" data-tap-toggle="false" data-role="header" id="h1">
+        <div class="ui-block-a" style="width:10%">
+            <a href="#defaultpanel" class="ui-btn ui-corner-all ui-icon-bars ui-btn-inline ui-btn-icon-notext"> default panel </a>
+        </div>
+        <div class="ui-block-b" style="width:70%">
+            <center><img src="img/Scholarship adviser lite.png"></center>
+        </div>
+        <!--  <div class="ui-block-c" style="width:10%">
+           <a href="#defaultpanel" class="ui-btn ui-corner-all ui-icon-fa-refresh ui-btn-inline ui-btn-icon-notext"> default panel </a>
+        </div> -->
+        <!-- <div class="ui-block-d" style="width:10%">
+           <a href="#" class="ui-btn ui-corner-all ui-icon-search ui-inline ui-btn-icon-notext" onclick="pencarian()"></a>
+        </div> -->
+        <div class="ui-block-e" style="width:10%">
+            <a href="#" class="ui-btn ui-corner-all ui-icon-fa-refresh ui-inline ui-btn-icon-notext" onclick="refresh()"></a>
+        </div>
+
+    </div>
+
+    <div data-role="panel" id="defaultpanel" data-theme="b" data-display="reveal" data-dismissible="false" data-position-fixed="true">
+        <ul data-role="listview" data-theme="c">
+
+            <!-- jangan lupa dirubah ke mode js untuk login-->
+            <!-- <li class="active-link"><a href="index.html" class="ui-btn ui-icon-user ui-btn-icon-left" ><h1>User (Not Login)</h1> </a></li> -->
+            <li class="active-link"><a href="#" id="user" class="ui-btn ui-icon-user ui-btn-icon-left" onclick="user()"></a>
+            </li>
+
+            <li class="active-link"><a href="#"  class="ui-btn ui-icon-carat-r ui-btn-icon-right" >
+                <h5>
+                    <span class="ui-btn-icon-left ui-icon-fa-home"></span>
+                    Home</h5></a>
+            </li>
+            <li class="active-link"><a href="#"  class="ui-btn ui-icon-carat-r ui-btn-icon-right" onclick="filter()">
+
+                <h5>
+                    <span class="ui-btn-icon-left ui-icon-fa-filter"></span>
+                    Pencarian</h5></a>
+            </li>
+
+            <li class="active-link"><a href="#"  class="ui-btn ui-icon-carat-r ui-btn-icon-right" onclick="favorite()">
+                <h5>
+                    <span class="ui-btn-icon-left ui-icon-fa-bookmark"></span>
+                    Beasiswaku</h5></a>
+            </li>
+        </ul>
+
+        <div data-role="collapsible-set" data-inset="false" data-collapsed-icon="false">
+
+            <ul data-role="listview">
+                <div data-role="collapsible" data-collapsed="false" data-collapsed-icon="plus" data-expanded-icon="minus" data-iconpos="right">
+                    <h3>
+                        <!-- <i class="ui-icon-star ui-btn-icon-left"></i> -->
+                        <i class="ui-btn-icon-left ui-icon-fa-institution"></i>
+                        Kategori</h3>
+
+                    <ul data-role="listview">
+
+                        <li data-icon="false">
+                            <div><a href="#" rel="external" onclick="pendidikan()">
+                                <div class="list_icon"><i class="fa fa-child list_font_icon"></i></div>
+                                <h2>Pendidikan</h2></a>
+                            </div>
+                        </li>
+                        <li data-icon="false">
+                            <div><a href="#" rel="external" onclick="jurusan()">
+                                <div class="list_icon"><i class="fa fa-child list_font_icon"></i></div>
+                                <h2>Jurusan</h2></a>
+                            </div>
+                        </li>
+                        <li data-icon="false">
+                            <div><a href="#" rel="external" onclick="negara()">
+                                <div class="list_icon"><i class="fa fa-child list_font_icon"></i></div>
+                                <h2>Negara</h2></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="plus" data-expanded-icon="minus" data-iconpos="right">
+                    <h3>
+                        <i class="ui-btn-icon-left ui-icon-fa-gear"></i>
+                        Konfigurasi</h3>
+                    <ul data-role="listview">
+                        <!-- <li data-icon="false">
+
+                             <div>
+                               <a href="#myPopupDialog" data-rel="popup" data-position-to="window" data-transition="fade">
+                                  <div class="list_icon"><i class="fa fa-group list_font_icon"></i></div>
+                                  <h2>Informasi</h2></a>
+                             </div>
+                        </li> -->
+                        <li data-icon="false">
+                            <div><a href="#" onclick="logout()">
+                                <div class="list_icon"><i class="fa fa-group list_font_icon"></i></div>
+                                <h2>Log out</h2></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <!-- <form class="ui-filterable">
+             <input id="myFilter" data-corners="true" placeholder="Cari beasiswa">
+           </form> -->
+
+        <!--  <ul id="beasiswalist" data-role="listview"></ul> -->
+        <ul id="beasiswalist" data-role="listview" data-filter="true" data-input="#myFilter">
+            <!--  <li><form class="ui-filterable">
+              <input id="myFilter" data-type="search">
+            </form></li> -->
+        </ul>
+
+        <div data-role="popup" id="myPopupDialog">
+            <div data-role="header">
+                <h1>Header Text</h1>
+                <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <h2>Welcome to my Popup Dialog!</h2>
+                <p>jQuery Mobile is FUN!</p>
+
+            </div>
+
+            <div data-role="footer">
+                <h1>Footer Text</h1>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!--div data-role="footer" data-position="fixed">
+     <h3>SKRIPSIRIGHT 2014</h3>
+</div-->
+</div>
+</div>
+<!-- end of div page-->
+
+<!--start of div page2-->
+<script type="text/javascript">
+          $(document).on("pageinit","#home",function(){
+                    $(this).on("swipeleft",function(){
+                         $.mobile.changePage("#pendidikan",{ transation:"slide",changeHash:true});
+                    });
+               });
+     $(document).on("pageinit","pendidikan",function(){
+                    $(this).on("swiperight",function(){
+                         $.mobile.changePage("#home",{ transation:"slide",reverse:true,changeHash:true});
+                    });
+               });
+</script>
+<script src="js/beasiswalist.js"></script>
+<script src="js/beasiswadetail2.js"></script>
+<!--<script src="js/pendidikan.js"></script>-->
+<!--<script src="js/pendidikandetail.js"></script>-->
+<!--<script src="js/negara.js"></script>-->
+<!--<script src="js/negaradetail.js"></script>-->
+<!--<script src="js/jurusandetail.js"></script>-->
+<!--<script src="js/jurusan.js"></script>-->
+<!--<script src="filterfin.js"></script>-->
+<!--<script src="js/daftarbio.js"></script>-->
+<!--<script src="beasiswaku3.js"></script>-->
+<!--<script src="js/user.js"></script>-->
+
+
+
+<script type="text/javascript">
+      var nama = localStorage.getItem("username");
+      var login = "login";
+
+      if(localStorage.getItem("username") ==undefined){
+        $('#user').append('<h4>'+login+'</h4>');
+      }
+      else{
+        $('#user').append('<h4>'+nama+'</h4>');
+      }
+            //else{
+            //$('#user').append('<h4>'+nama+'</h4>');
+                    //location.href = "user.html";
+            //}
+ 
+          //$('#usernama').text(nama);
+          //$('#user').append('<h4>'+nama+'</h4>');
+     </script>
+</body>
+</html>

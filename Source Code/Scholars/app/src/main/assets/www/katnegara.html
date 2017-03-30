@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>TEST HYBRID</title>
+    <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1, maximum-scale=1" />
+    <script type="text/javascript" charset="utf-8" src="cordova-2.4.0.js"></script> <!-- memanggil script cordova/phonegap-->
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css"/> <!-- memanggil jquery mobile.css-->
+    <link type="text/css" rel="stylesheet" href="css/css/jqm-font-awesome-isvg-ipng.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/jquery.min.js"></script>							<!-- memanggil script js jquery min-->
+    <script src="js/jquery.mobile-1.4.2.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+	function onLoad(){
+	console.log("Device Ready !!!");
+	document.addEventListener("deviceready", onDeviceReady,false);	
+
+	}
+		function home(){
+			location.href="home.html"
+		}
+		function penyedia(){
+			location.href="penyedia.html"
+		}
+		function filter(){
+			location.href="filter.html";
+		}
+		function favorite(){
+			location.href="beasiswaku.html"
+		}
+		function pencarian(){
+                    location.href="search.html";
+          }
+          function searchfx(){
+                    location.href = "searchfx.html";
+          }
+          function pendidikan(){
+               location.href="katpendidikan.html";
+          }
+          function jurusan(){
+                    location.href = "katjurusan.html";
+          }
+          function negara(){
+               location.href="katnegara.html";
+          }
+          
+          function user(){
+                    location.href = "user.html";
+          }
+          function logout(){
+                    localStorage.clear();
+                    window.location.href="../www/index.html";
+          }
+	</script>
+
+</head>
+<body>
+
+<div data-role="page" id="negara"> <!-- end of div page1-->
+
+    <div  data-position="fixed" data-tap-toggle="false" data-role="header" id="h1">
+        <div class="ui-block-a" style="width:10%">
+            <a href="#defaultpanel" class="ui-btn ui-corner-all ui-icon-bars ui-btn-inline ui-btn-icon-notext"> default panel </a>
+        </div>
+        <div class="ui-block-b" style="width:70%">
+            <center><img src="img/Scholarship adviser lite.png"></center>
+        </div>
+        <!--  <div class="ui-block-c" style="width:10%">
+           <a href="#defaultpanel" class="ui-btn ui-corner-all ui-icon-fa-refresh ui-btn-inline ui-btn-icon-notext"> default panel </a>
+        </div> -->
+
+    </div>
+
+    <div data-role="panel" id="defaultpanel" data-theme="b" data-display="reveal" data-dismissible="false" data-position-fixed="true">
+        <!-- <a href="index.html" class="ui-btn ui-icon-user ui-btn-icon-left ui-corner-all" data-shadow="false" style="background:none; border:none; background-color:transparent;box-shadow:none;"><h3 style="font-size:16px; margin-top:-5px; margin-bottom: 5px;">User (Not Login)</h3> </a> -->
+        <!-- <a href="admin.html" class="ui-shadow ui-btn ui-corner-all " data-shadow="false" style="background:none; border:none; background-color:transparent;box-shadow:none;"><h3 style="font-size:15px; margin-top:-5px; margin-bottom: -10px;">Aplikasi Pemesanan </br>DRYBAG® & SUEDESHOES®</h3></a> -->
+        <ul data-role="listview" data-theme="c">
+
+            <!-- jangan lupa dirubah ke mode js untuk login-->
+            <!-- <li class="active-link"><a href="index.html" class="ui-btn ui-icon-user ui-btn-icon-left" ><h1>User (Not Login)</h1> </a></li> -->
+            <li class="active-link"><a href="#" id="user" class="ui-btn ui-icon-user ui-btn-icon-left" onclick="user()"></a>
+            </li>
+
+            <li class="active-link"><a href="#"  class="ui-btn ui-icon-carat-r ui-btn-icon-right"  onclick="home()" >
+                <h5>
+                    <span class="ui-btn-icon-left ui-icon-fa-home"></span>
+                    Home</h5></a>
+            </li>
+            <!-- <li class="active-link"><a href="#"  class="ui-btn ui-icon-star ui-btn-icon-left" onclick="kategori()"><h3>Kategori</h3></a></li> -->
+
+            <li class="active-link"><a href="#"  class="ui-btn ui-icon-carat-r ui-btn-icon-right" onclick="filter()">
+
+                <h5>
+                    <span class="ui-btn-icon-left ui-icon-fa-filter"></span>
+                    Pencarian</h5></a>
+            </li>
+
+            <li class="active-link"><a href="#"  class="ui-btn ui-icon-carat-r ui-btn-icon-right" onclick="favorite()">
+                <h5>
+                    <span class="ui-btn-icon-left ui-icon-fa-bookmark"></span>
+                    Beasiswaku</h5></a>
+            </li>
+        </ul>
+
+        <div data-role="collapsible-set" data-inset="false" data-collapsed-icon="false">
+
+            <ul data-role="listview">
+                <div data-role="collapsible" data-collapsed="false" data-collapsed-icon="plus" data-expanded-icon="minus" data-iconpos="right">
+                    <h3>
+                        <!-- <i class="ui-icon-star ui-btn-icon-left"></i> -->
+                        <i class="ui-btn-icon-left ui-icon-fa-institution"></i>
+                        Kategori</h3>
+
+                    <ul data-role="listview">
+
+                        <li data-icon="false">
+                            <div><a href="#" rel="external" onclick="pendidikan()">
+                                <div class="list_icon"><i class="fa fa-child list_font_icon"></i></div>
+                                <h2>Pendidikan</h2></a>
+                            </div>
+                        </li>
+                        <li data-icon="false">
+                            <div><a href="#" rel="external" onclick="jurusan()">
+                                <div class="list_icon"><i class="fa fa-child list_font_icon"></i></div>
+                                <h2>Jurusan</h2></a>
+                            </div>
+                        </li>
+                        <li data-icon="false">
+                            <div><a href="#" rel="external" onclick="negara()">
+                                <div class="list_icon"><i class="fa fa-child list_font_icon"></i></div>
+                                <h2>Negara</h2></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="plus" data-expanded-icon="minus" data-iconpos="right">
+                    <h3>
+                        <i class="ui-btn-icon-left ui-icon-fa-gear"></i>
+                        Konfigurasi</h3>
+                    <ul data-role="listview">
+
+                        <!-- <li data-icon="false">
+                             <div><a href="add_distributor.html" rel="external">
+                                  <div class="list_icon"><i class="fa fa-child list_font_icon"></i></div>
+                                  <h2>Pengaturan</h2></a>
+                             </div>
+                        </li>
+                        <li data-icon="false">
+                             <div><a href="distributor_list.html" rel="external">
+                                  <div class="list_icon"><i class="fa fa-group list_font_icon"></i></div>
+                                  <h2>Informasi</h2></a>
+                             </div>
+                        </li> -->
+                        <li data-icon="false">
+                            <div><a href="#" onclick="logout()">
+                                <div class="list_icon"><i class="fa fa-group list_font_icon"></i></div>
+                                <h2>Log out</h2></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </ul>
+        </div>
+    </div>
+    <div data-role="main" class="ui-content">
+        <img style="max-width:100%;max-height:100%;" id="gambarnegara" src="img/i4.jpg"/>
+        <ul id="negaralist" data-role="listview">
+
+
+        </ul>
+    </div>
+
+    <!--div data-role="footer" data-position="fixed">
+        <h3>SKRIPSIRIGHT 2014</h3>
+    </div-->
+</div>
+
+<!--div data-role="page" id="pendidikan">
+
+        <div data-role="header">
+            <div  data-position="fixed" data-tap-toggle="false" data-role="header" id="h1">
+        <a href="#defaultpanel" class="ui-btn ui-corner-all ui-icon-bars ui-btn-inline ui-btn-icon-notext"> default panel </a>
+        <center><img src="img/Scholarship adviser lite.png"></center>
+        <a href="search.html" data-role="button" data-inline="true" data-icon="search" data-iconpos="notext" data-iconpos="right"></a>
+
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home">home</a></li>
+                    <li><a href="#" class="ui-btn-active">terpopuler</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <ul id="kategorilist" data-role="listview"></ul>
+</div>
+        </div-->
+<!--
+</div> -->
+<!-- end of div page-->
+
+<!--start of div page2-->
+<script type="text/javascript">
+		$(document).on("pageinit","#home",function(){
+				$(this).on("swipeleft",function(){
+					$.mobile.changePage("#pendidikan",{ transation:"slide",changeHash:true});
+				});
+			});
+	$(document).on("pageinit","pendidikan",function(){
+				$(this).on("swiperight",function(){
+					$.mobile.changePage("#home",{ transation:"slide",reverse:true,changeHash:true});
+				});
+			});
+</script>
+
+<script src="js/negara.js"></script>
+<script src="js/negaradetail.js"></script>
+<script src="js/beasiswalist.js"></script>
+<script src="js/beasiswadetail2.js"></script>
+<!--script src="filter.js"></script-->
+<script type="text/javascript">
+      var nama = localStorage.getItem("username");
+      var login = "login";
+
+      if(localStorage.getItem("username") ==undefined){
+        $('#user').append('<h4>'+login+'</h4>');
+      }
+      else{
+        $('#user').append('<h4>'+nama+'</h4>');
+      }
+  </script>
+</body>
+</html>

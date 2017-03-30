@@ -1,0 +1,522 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>TEST HYBRID</title>
+    <script type="text/javascript" charset="utf-8" src="cordova-2.4.0.js"></script> <!-- memanggil script cordova/phonegap-->
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css"/> <!-- memanggil jquery mobile.css-->
+    <link type="text/css" rel="stylesheet" href="css/css/jqm-font-awesome-isvg-ipng.min.css" />
+    <script src="js/jquery.min.js"></script>              <!-- memanggil script js jquery min-->
+    <script src="js/jquery.mobile-1.4.2.min.js"></script>       <!-- memanggil script js jquery mobile.css-->
+    <!-- <script src="filter.js"></script> -->
+    <script src="filterfin.js"></script>
+    <script src="js/beasiswadetail2.js"></script>
+
+
+    <script type="text/javascript">
+  function back(){
+    location.href="home.html"
+  }
+   $(document).on("mobileinit", function () {
+          $.mobile.hashListeningEnabled = false;
+          $.mobile.pushStateEnabled = false;
+          $.mobile.changePage.defaults.changeHash = false;
+        });
+     function onLoad(){
+     console.log("Device Ready !!!");
+     document.addEventListener("deviceready", onDeviceReady,false);   
+
+     }
+      function home(){
+      location.href="home.html"
+    }
+          function populer(){
+                    location.href = "populer.html";
+               }
+          function pendidikan(){
+               location.href="katpendidikan.html";
+          }
+          function negara(){
+               location.href="katnegara.html";
+          }
+          function filter(){
+               location.href="filter.html";
+          }
+          function favorite(){
+               location.href="beasiswaku.html";
+          }
+          function pencarian(){
+                    location.href="search.html";
+          }
+          function searchfx(){
+                    location.href = "searchfx.html";
+          }
+          function jurusan(){
+                    location.href = "katjurusan.html";
+          }
+          function user(){
+                    location.href = "user.html";
+          }
+          function refresh(){
+                    //location.href = "searchfx.html";
+                    location.reload();
+          }
+          function logout(){
+                    localStorage.clear();
+                    window.location.href="../www/index.html";
+          }
+           function reset(){
+                    //location.href = "searchfx.html";
+                    location.reload();
+          }
+          function refreshpage()
+          {
+              jQuery.mobile.changePage(window.location.href, {
+                  allowSamePageTransition: true,
+                  transition: 'none',
+                  reloadPage: true
+              });
+          }
+          // function checkPreAuth() {
+          // var form = $("#loginForm");
+          // if(window.localStorage["username"] != undefined && window.localStorage["password"] != undefined) {
+          // $("#username", form).val(window.localStorage["username"]);
+          // $("#password", form).val(window.localStorage["password"]);
+          // handleLogin();
+          // }
+          // }
+     </script>
+    <!-- //$(document).ready(function(){
+       //apabila terjadi event onchange terhadap object <select id=comboKategori>
+       //$("#submitfil").change(function(){
+    </script> -->
+</head>
+
+<body>
+<div data-role="page" id="filter" >
+
+    <!--bagian page login dokumen htmlnya -->
+
+    <div  data-position="fixed" data-tap-toggle="false" data-role="header" id="h1">
+        <div class="ui-block-a" style="width:10%">
+            <a href="#defaultpanel" class="ui-btn ui-corner-all ui-icon-bars ui-btn-inline ui-btn-icon-notext"> default panel </a>
+        </div>
+        <div class="ui-block-b" style="width:70%">
+            <center><img src="img/Scholarship adviser lite.png"></center>
+        </div>
+        <!--  <div class="ui-block-c" style="width:10%">
+           <a href="#defaultpanel" class="ui-btn ui-corner-all ui-icon-fa-refresh ui-btn-inline ui-btn-icon-notext"> default panel </a>
+        </div> -->
+        <div class="ui-block-e" style="width:10%">
+            <a href="#" class="ui-btn ui-corner-all ui-icon-fa-refresh ui-inline ui-btn-icon-notext" onclick="refresh()"></a>
+        </div>
+    </div>
+
+    <div data-role="panel" id="defaultpanel" data-theme="b" data-display="reveal" data-dismissible="false" data-position-fixed="true">
+        <!-- <a href="index.html" class="ui-btn ui-icon-user ui-btn-icon-left ui-corner-all" data-shadow="false" style="background:none; border:none; background-color:transparent;box-shadow:none;"><h3 style="font-size:16px; margin-top:-5px; margin-bottom: 5px;">User (Not Login)</h3> </a> -->
+        <!-- <a href="admin.html" class="ui-shadow ui-btn ui-corner-all " data-shadow="false" style="background:none; border:none; background-color:transparent;box-shadow:none;"><h3 style="font-size:15px; margin-top:-5px; margin-bottom: -10px;">Aplikasi Pemesanan </br>DRYBAG® & SUEDESHOES®</h3></a> -->
+        <ul data-role="listview" data-theme="c">
+
+            <!-- jangan lupa dirubah ke mode js untuk login-->
+            <!-- <li class="active-link"><a href="index.html" class="ui-btn ui-icon-user ui-btn-icon-left" ><h1>User (Not Login)</h1> </a></li> -->
+            <li class="active-link"><a href="#" id="user" class="ui-btn ui-icon-user ui-btn-icon-left" onclick="user()"></a>
+            </li>
+
+            <li class="active-link"><a href="#"  class="ui-btn ui-icon-carat-r ui-btn-icon-right" onclick="home()">
+                <h5>
+                    <span class="ui-btn-icon-left ui-icon-fa-home"></span>
+                    Home</h5></a>
+            </li>
+            <!-- <li class="active-link"><a href="#"  class="ui-btn ui-icon-star ui-btn-icon-left" onclick="kategori()"><h3>Kategori</h3></a></li> -->
+
+            <li class="active-link"><a href="#"  class="ui-btn ui-icon-carat-r ui-btn-icon-right" onclick="filter()">
+
+                <h5>
+                    <span class="ui-btn-icon-left ui-icon-fa-filter"></span>
+                    Pencarian</h5></a>
+            </li>
+
+            <li class="active-link"><a href="#"  class="ui-btn ui-icon-carat-r ui-btn-icon-right" onclick="favorite()">
+                <h5>
+                    <span class="ui-btn-icon-left ui-icon-fa-bookmark"></span>
+                    Beasiswaku</h5></a>
+            </li>
+        </ul>
+
+        <div data-role="collapsible-set" data-inset="false" data-collapsed-icon="false">
+
+            <ul data-role="listview">
+                <div data-role="collapsible" data-collapsed="false" data-collapsed-icon="plus" data-expanded-icon="minus" data-iconpos="right">
+                    <h3>
+                        <!-- <i class="ui-icon-star ui-btn-icon-left"></i> -->
+                        <i class="ui-btn-icon-left ui-icon-fa-institution"></i>
+                        Kategori</h3>
+
+                    <ul data-role="listview">
+
+                        <li data-icon="false">
+                            <div><a href="#" rel="external" onclick="pendidikan()">
+                                <div class="list_icon"><i class="fa fa-child list_font_icon"></i></div>
+                                <h2>Pendidikan</h2></a>
+                            </div>
+                        </li>
+                        <li data-icon="false">
+                            <div><a href="#" rel="external" onclick="jurusan()">
+                                <div class="list_icon"><i class="fa fa-child list_font_icon"></i></div>
+                                <h2>Jurusan</h2></a>
+                            </div>
+                        </li>
+                        <li data-icon="false">
+                            <div><a href="#" rel="external" onclick="negara()">
+                                <div class="list_icon"><i class="fa fa-child list_font_icon"></i></div>
+                                <h2>Negara</h2></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="plus" data-expanded-icon="minus" data-iconpos="right">
+                    <h3>
+                        <i class="ui-btn-icon-left ui-icon-fa-gear"></i>
+                        Konfigurasi</h3>
+                    <ul data-role="listview">
+
+                        <!-- <li data-icon="false">
+                             <div><a href="add_distributor.html" rel="external">
+                                  <div class="list_icon"><i class="fa fa-child list_font_icon"></i></div>
+                                  <h2>Pengaturan</h2></a>
+                             </div>
+                        </li>
+                        <li data-icon="false">
+                             <div><a href="distributor_list.html" rel="external">
+                                  <div class="list_icon"><i class="fa fa-group list_font_icon"></i></div>
+                                  <h2>Informasi</h2></a>
+                             </div>
+                        </li> -->
+                        <li data-icon="false">
+                            <div><a href="#" onclick="logout()">
+                                <div class="list_icon"><i class="fa fa-group list_font_icon"></i></div>
+                                <h2>Log out</h2></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <!-- bagian konten login htmlnya -->
+
+    <div data-role="main" class="ui-content">
+
+
+        <form method="POST" id="filterform" name="login" >
+            <ul id="filterinput" data-role="listview">
+                <!-- <li class="ui-btn ui-icon-gear ui-btn-icon-left"><h3>&nbsp;&nbsp;&nbsp;&nbsp;Filter </h3>
+                </li> -->
+                <!--  <li>
+                 <input id="myFilter" data-corners="true" placeholder="Kata Kunci">
+
+                  </li> -->
+
+                <div data-role="collapsible-set">
+                    <div data-role="collapsible">
+                        <h3 class="ui-btn ui-icon-gear ui-btn-icon-left"><center>Pencarian Lanjut</center></h3>
+
+                        <!-- <li><fieldset class="ui-field-contain">
+                               <input id="myFilter" data-corners="true" placeholder="Kata Kunci Nama Beasiswa">
+                        </fieldset>
+                          </li> -->
+
+
+
+
+                        <!-- <li><fieldset class="ui-field-contain" data-role="controlgroup" data-type="horizontal">
+                                <legend>Pilih Jenjang</legend>
+                                  <label for="s1">S1</label>
+                                  <input type="checkbox" name="pendidikan" id="s1" value="1">
+                                  <label for="s2">S2</label>
+                                  <input type="checkbox" name="pendidikan" id="s2" value="2">
+                                  <label for="s3">S3</label>
+                                  <input type="checkbox" name="pendidikan" id="s3" value="3">
+                            </fieldset>
+                            </li> -->
+
+                        <li><fieldset class="ui-field-contain">
+                            <!--  <label for="program">Pilih Program</label> -->
+                            <ul id="program" class="autocomplete"  data-role="listview" data-inset="true" data-filter="true"
+                                data-filter-placeholder="Tulis Program studi" ></ul>
+                        </fieldset>
+                        </li>
+
+                        <li><fieldset class="ui-field-contain">
+                            <label for="negara">Pilih Negara</label>
+                            <select name="negara" id="negara" data-native-menu="true" required="required">
+                                <option>Negara</option>
+                                <option value ="indonesia" >indonesia</option>
+                                <option value ="united states">Amerika Serikat</option>
+                                <!-- <option value ="canada">Kanada</option>
+                                <option value ="japan">Jepang</option>
+                                <option value ="china">Cina</option>
+                               <option value ="singapore">Singapura</option> -->
+                                <!-- <option value ="malaysia">Malaysia</option> -->
+                                <option value ="united kingdom">Inggris</option>
+                                <!-- <option value ="german">Jerman</option> -->
+                                <!-- <option value ="france">Prancis</option> -->
+                                <option value ="netherland">Belanda</option>
+                                <option value ="australia">Australia</option>
+                                <option value ="internasional">internasional</option>
+                            </select>
+                        </fieldset>
+                        </li>
+
+                        <li><fieldset class="ui-field-contain">
+                            <label for="kategori">Pilih Jenjang</label>
+                            <select name="kategori" id="kategori" data-native-menu="true" required="required">
+                                <option>Jenjang Studi</option>
+                                <!-- <option name="semua jurusan" value="Semua Jurusan">Semua Jurusan</option> -->
+                                <option name="sarjana" value="Sarjana">Sarjana</option>
+                                <option name="master" value="Master">Master</option>
+                                <option name="doktor" value="Doktor">Doktor</option>
+                            </select>
+                        </fieldset>
+                        </li>
+
+
+                        <!--   <div data-role="collapsible-set">
+                            <div data-role="collapsible">
+                              <h3>Opsional</h3> -->
+
+                        <li><fieldset class="ui-field-contain">
+                            <label for="tipe">Jenis Beasiswa</label>
+                            <select name="tipe" id="tipex" data-native-menu="true">
+                                <option>Pilih Jenis</option>
+                                <option value="Beasiswa">Beasiswa</option>
+                                <option value="pertukaran">pertukaran</option>
+                                <option value="fellowship">Fellowship</option>
+                            </select>
+                        </fieldset>
+                        </li>
+
+                        <!--  <div data-role="collapsible"> -->
+                        <!--  <li><fieldset class="ui-field-contain">
+                              <label for="sertifikat">Pilih Sertifikat</label>
+                              <select name="sertifikat" id="sertifikat" data-native-menu="false" multiple="multiple">
+                                <option value="ibt">TOEFL IBT</option>
+                                <option value="pbt">TOEFL PBT</option>
+                                <option value="ielts">IELTS</option>
+                                <option value="ipk">IPK</option>
+                            </select>
+                            </fieldset>
+                          </li> -->
+
+                        <li>
+                            <fieldset class="ui-field-contain" data-role="controlgroup">
+                                <legend>Sertifikat</legend>
+                                <label for="ipk">IPK</label>
+                                <input type="checkbox" name="sertifikat" id="ipk" value="ipk">
+                                <label for="ibt">TOEFL IBT</label>
+                                <input type="checkbox" name="sertifikat" id="ibt" value="ibt">
+                                <label for="pbt">TOEFL PBT</label>
+                                <input type="checkbox" name="sertifikat" id="pbt" value="pbt">
+                                <label for="ielts">IELTS</label>
+                                <input type="checkbox" name="sertifikat" id="ielts" value="ielts">
+                            </fieldset>
+                        </li>
+
+                        <!-- <label for="update">update beasiswa</label>
+                         <input type="checkbox" name="update" value="1" id="update" /> -->
+
+                        <li>
+
+                            <fieldset class="ui-field-contain" >
+                                <label for="deadline">Deadline(dalam bulan):</label>
+                                <input type="range" name="deadline" id="deadlinex" value="" min="0" max="12" data-highlight="true">
+
+                                <!-- <div data-role="fieldcontain">
+                                <label for="bday">Deadline</label>
+                                <input type="date" name="bday" id="bday"> -->
+                                <!-- </div> -->
+                                <!--  <div class="ui-field-contain"> -->
+
+                                <!--  <fieldset class="ui-field-contain" data-role="controlgroup" data-type="horizontal">
+                                   <legend>Deadline Beasiswa</legend>
+                                     <label for="bulan">Bulan</label>
+                                     <select name="bulan" id="bulan">
+                                       <option value="january" disabled="disabled">Januari</option>
+                                       <option value="february" disabled="disabled">Febuari</option>
+                                       <option value="march" disabled="disabled">Maret</option>
+                                       <option value="april" disabled="disabled">April</option>
+                                       <option value="may" disabled="disabled">Mei</option>
+                                       <option value="june">Juni</option>
+                                       <option value="july">Juli</option>
+                                       <option value="august">Agustus</option>
+                                       <option value="september">September</option>
+                                       <option value="october">Oktober</option>
+                                       <option value="november">November</option>
+                                       <option value="desember">Desember</option>
+                                     </select>
+
+                                     <label for="tahun">Tahun</label>
+                                     <select name="tahun" id="tahun">
+                                       <option value="2015">2015</option>
+                                       <option value="2016">2016</option>
+                                     </select> -->
+
+                            </fieldset>
+                            <!--  </div> -->
+                            <!-- </fieldset> -->
+                        </li>
+
+
+                        <!--  <div data-role="collapsible"> -->
+                        <!--  <li>
+                           <fieldset class="ui-field-contain"> -->
+                        <!-- <div data-role="rangeslider" disabled> -->
+                        <!-- <label for="nilai">Nilai</label>
+                        <input type="range" name="nilai" id="nilai" value="2" min="0" max="4" data-highlight="true" disabled="disabled"> -->
+                        <!-- <label for="IPK-min">IPK:</label>
+                        <input type="range" name="price-min" id="IPK-min" value="2.0" min="1.0" max="4.0">
+                        <label for="IPK-max">IPK:</label>
+                        <input type="range" name="price-max" id="IPK-max" value="3.0" min="1.0" max="4.0"> -->
+                        <!-- </div> -->
+                        <!-- </fieldset>
+                    </li> -->
+                        <!--  </div>
+                            </div> -->
+
+                        <!-- <fieldset data-role="controlgroup">
+                            <legend>Prasyarat Sertifikat</legend>
+                              <label for="toefli">TOEFL IBT</label>
+                              <input type="checkbox" name="sertifikat" id="toefli" value="toefli">
+                              <label for="toeflp">TOEFL PBT</label>
+                              <input type="checkbox" name="sertifikat" id="toeflp" value="toeflp">
+                              <label for="ielts">IELTS</label>
+                              <input type="checkbox" name="sertifikat" id="ielts" value="ielts">
+                          </fieldset> -->
+
+                        <li>
+                            <!--  <div class="inline"> -->
+                            <!--  <fieldset class="ui-field-contain">
+                            <label for="update">update beasiswa</label> -->
+                            <!-- <input type="checkbox" name="update" value="1" id="update" /> -->
+                            <!--  <input type="checkbox" data-role="flipswitch" name="update" id="update" value="1"> -->
+                            <!--  </div> -->
+                            <!--  </fieldset> -->
+                        </li>
+                    </div>
+                </div>
+
+                <!-- <center><fieldset data-role="controlgroup" data-type="horizontal"> -->
+
+                <input type="submit" id="submitfil" value="submit">
+                <!--  </center> -->
+                <!--  <input type="submit" value="Reset" onclick="refreshpage()"> -->
+                <!-- </fieldset> -->
+            </ul>
+        </form><br>
+
+
+        <!-- <li>
+               <div data-role="collapsible-set">
+                 <div data-role="collapsible">
+                 <h3>Opsional</h3>
+             <div data-role="rangeslider">
+               <label for="IPK-min">IPK:</label>
+               <input type="range" name="price-min" id="IPK-min" value="2.0" min="1.0" max="4.0">
+               <label for="IPK-max">IPK:</label>
+               <input type="range" name="price-max" id="IPK-max" value="3.0" min="1.0" max="4.0">
+             </div>
+              <div data-role="rangeslider">
+               <label for="TEOFL-min">TOEFL:</label>
+               <input type="range" name="price-min" id="TOEFL-min" value="100" min="0" max="600">
+               <label for="TOEFL-max">TOEFL:</label>
+               <input type="range" name="price-max" id="TOEFL-max" value="200" min="0" max="600">
+             </div>
+             <div><!- AKAN BERUBAH SESUAI NEGARA YANG DITUJU ->
+               <fieldset class="ui-field-contain">
+                   <label for="univ">Pilih Universitas</label>
+                   <select name="univ" id="program" data-native-menu="false">
+                     <option>Universitas</option>
+                     <option value="MIT">MIT</option>
+                     <option value="LEIDEN">LEIDEN UNIV</option>
+                   </select>
+                 </fieldset>
+             </div>
+           </div>
+           </div>
+           </li>
+        -->
+
+
+
+        <ul id="beasiswalist" data-role="listview" data-inset="true"></ul>
+        <div id="loading" style="display:none;text-align:center;">
+            <img src="loading.gif">
+        </div>
+    </div>
+
+</div>
+
+<!--div data-role="page" id="filtertampil">
+
+  <div data-role="header" data-position="fixed" data-theme="a">
+    <a href="#" class="ui-btn ui-corner-all ui-icon-back ui-inline ui-btn-icon-notext" onclick="back()"></a>
+    <h1> Filter </h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <ul id="beasiswalist" data-role="listview"></ul>
+  </div>
+
+</div-->
+<script>
+    
+    // show auto-complete values 
+    $(document).on( "pageinit", "#filter", function() {
+      $( ".autocomplete" ).on( "listviewbeforefilter", function ( e, data ) {        
+        var $ul = $(this);                        // $ul refers to the shell unordered list under the input box
+        var value = $( data.input ).val();        // this is value of what user entered in input box
+        var dropdownContent = "" ;                // we use this value to collect the content of the dropdown
+        $ul.html("") ;                            // clears value of set the html content of unordered list
+        
+        // on third character, trigger the drop-down
+        if ( value && value.length > 2 ) {
+        // hard code some values... TO DO: replace with AJAX call
+        var response = ['fisika','biologi','akuntansi','ekonomi','hukum','sejarah','ilmu sosial','psikologi','ilmu komputer','matematika','teknik elektro','teknik sipil','bisnis administrasi','teknik informatika'];
+  
+          $('.autocomplete').show();           
+          $ul.html( "<li><div class='ui-loader'><span class='ui-icon ui-icon-loading' ></span></div></li>" );
+          $ul.listview( "refresh" );
+          $.each(response, function( index, val ) {
+              dropdownContent += "<li>" + val + "</li>";
+            $ul.html( dropdownContent );
+            $ul.listview( "refresh" );
+            $ul.trigger( "updatelayout");  
+          });
+        }
+      })
+    });    
+    
+    // click to select value of auto-complete
+    $( document).on( "click", ".autocomplete li", function() {      
+      var selectedItem = $(this).html();
+      $(this).parent().parent().find('input').val(selectedItem);   
+      $('.autocomplete').hide();     
+    });
+    
+    </script>
+
+<script type="text/javascript">
+      var nama = localStorage.getItem("username");
+      var login = "login";
+
+      if(localStorage.getItem("username") ==undefined){
+        $('#user').append('<h4>'+login+'</h4>');
+      }
+      else{
+        $('#user').append('<h4>'+nama+'</h4>');
+      }
+  </script>
+
+</body>
+</html>

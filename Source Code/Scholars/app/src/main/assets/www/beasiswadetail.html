@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>TEST HYBRID</title>
+	<script type="text/javascript" charset="utf-8" src="cordova-2.4.0.js"></script> <!-- memanggil script cordova/phonegap-->
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css"/> <!-- memanggil jquery mobile.css-->
+	<script src="js/jquery.min.js"></script>							<!-- memanggil script js jquery min-->
+	<script src="js/jquery.mobile-1.4.2.min.js"></script>				<!-- memanggil script js jquery mobile.css-->
+	<script src="filter.js"></script>
+	<!--script src="js/simpan.js"></script-->
+	<script type="text/javascript">
+	//BACK PERLU DIPERBAIKI
+	function back(){
+			location.href="home.html"
+		}
+	function rektes(){
+			location.href="rektes.html"
+	}
+	</script>
+
+</head>
+
+<body>
+<div data-role="page" id="detailbeasiswa">
+
+	<!--bagian page login dokumen htmlnya -->
+	<div data-role="header" data-position="fixed" data-theme="a">
+		<a href="#" data-direction="reverse" data-rel="back" class="ui-btn ui-corner-all ui-icon-back ui-inline ui-btn-icon-notext"></a>
+		<center><img src="img/Scholarship adviser lite.png"></center>
+	</div>
+
+	<!-- bagian konten login htmlnya -->
+	<div data-role="main" class="ui-content">
+		<ul id="detailview" data-role="listview">
+			<!--memanggil gambar dengan javascript melalui id=defgambar-->
+			<li><center>
+				<img style="width:100%;height:200px;" id="gambar"/>
+
+			</center></li>
+
+			<!--memanggil detail judul,deskripsi,deadline dengan javascript melalui id-->
+			<li><div id="details">
+
+				<h1 id="judul"></h1>
+				<p id="deskripsi"></p>
+				<p id="deadline"></p>
+				<p id="tipe"></p>
+
+
+			</div></li>
+		</ul>
+		<!--button untuk menyimpann beasiswa-->
+		<center><div id="simpanx" data-role="controlgroup">
+
+			<!-- <input type="button" data-theme="e" id="simpan" value="simpan"></input> -->
+
+			<!-- <a href="#" class="ui-btn" data-theme="a" id="simpan" value="simpan">simpan</a>  -->
+			<!-- <a href="#" class="ui-btn" data-theme="a" id="hapus" value="hapus" disabled="disabled">Hapus</a> -->
+		</div></center><br>
+		<center><div id="hapusx" data-role="controlgroup">
+		</div></center><br>
+
+		<!--div >
+          <label for="update">Simpan Offline</label>
+            <<input type="checkbox" name="update" value="1" id="update" />>
+            <input type="checkbox" data-role="flipswitch" name="offline" id="offline" value="1">
+         <</div>>
+          </div-->
+
+		<div data-role="collapsible" id="campaignObjectives" data-theme="a">
+			<h3>Detail Beasiswa</h3>
+			<div id="tampil"></div>
+		</div>
+
+		<!-- <div data-theme="a" data-content-theme="a" id="detail-resep-masakan">
+    </div> -->
+
+
+		<!--daftar detail beasiswa-->
+		<ul id="actionList" data-role="listview" data-inset="true">
+		</ul>
+
+
+		<!--daftar rekomendasi beasiswa yang berhubungan-->
+		<ul id="rekomendasi" data-role="listview" data-inset="true">
+			<h3>Beasiswa Terkait</h3>
+			<!--li><a href="test.html" data-transition="flip">
+                        <img src="img/i1.jpg">
+                        <h2>Australia Exchange</h2>
+                        <p>Dateline : 19 oktober - 20 desember 2014</p>
+                </a>
+                </li>
+                <li><a href="#" data-transition="flip">
+                        <img src="img/i1.jpg">
+                        <h2>Australia Exchange</h2>
+                        <p>Dateline : 19 oktober - 20 desember 2014</p>
+                </a>
+                </li>
+                <li><a href="#" data-transition="flip">
+                        <img src="img/i1.jpg">
+                        <h2>Australia Exchange</h2>
+                        <p>Dateline : 19 oktober - 20 desember 2014</p>
+                </a>
+                </li-->
+		</ul>
+
+		<div data-role="collapsible">
+			<h3>Komentar</h3>
+			<form method="post" action="">
+				<textarea id="komentar" name="komentar" placeholder="Isi komentar Anda..."></textarea>
+				<button type="submit" id="simpankomentar" name="simpan" data-icon="check">Simpan</button>
+			</form>
+			<ul id="komenlist" data-role="listview" data-inset="true" data-split-icon="delete">
+
+			</ul>
+		</div>
+
+
+	</div>
+
+</div>
+
+
+</body>
+</html>
+

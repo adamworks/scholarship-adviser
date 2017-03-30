@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>TEST HYBRID</title>
+    <!-- memanggil script cordova/phonegap-->
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css"/> <!-- memanggil jquery mobile.css-->
+    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href=" extra/css/jquery.mobile-1.4.0.min.css" />
+</head>
+
+<body>
+<div data-role="page" id="daftarbio">
+
+    <div data-role="header" data-position="fixed" data-theme="a">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn ui-corner-all ui-icon-back ui-inline ui-btn-icon-notext"></a>
+        <center><img src="img/Scholarship adviser lite.png"></center>
+    </div>
+
+    <div data-role="main" class="ui-content" id="biodatainput">
+        <ul id="filterinput" data-role="listview">
+            <li class="ui-icon-gear ui-btn-icon-left"><h3>&nbsp;&nbsp;&nbsp;&nbsp;Daftar Biodata diri </h3>
+            </li>
+        </ul><br/>
+
+        <form method="POST" id="filterform" name="login" >
+
+            <div data-role="fieldcontain">
+                <label for="editnamaawal" id="editnamaawal">Nama Pertama<span style='color:red;'>*</span></label>
+                <input type="text" required="required" title="Masukan nama pertama" name="editnamaawal" id="fname" placeholder="masukan nama depan" autocomplete="off" data-clear-btn="true"></input>
+            </div>
+
+            <div data-role="fieldcontain">
+                <label for="editnamablkg" id="editnamablkg">Nama Belakang<span style='color:red;'>*</span></label>
+                <input type="text" required="required" title="Enter last name here." name="editnamablkg" id="lname" placeholder="masukan nama akhir" autocomplete="off" data-clear-btn="true"></input>
+            </div>
+
+            <!-- <div data-role="fieldcontain">
+            <label for="alamat" id="alamat">Alamat<span style='color:red;'>*</span></label>
+            <input type="text" required="required" title="alamat" name="alamat" id="alamat" placeholder="alamat" autocomplete="off" data-clear-btn="true"></input>
+            </div> -->
+
+            <div data-role="fieldcontain">
+                <label for="bday">Date of Birth:</label>
+                <input type="date" name="bday" id="bday">
+            </div>
+
+            <fieldset data-role="controlgroup">
+                <legend>Jenis Kelamin:</legend>
+                <label for="laki">Laki</label>
+                <input type="radio" name="gender" id="laki" value="Pria" checked>
+                <label for="perempuan">Perempuan</label>
+                <input type="radio" name="gender" id="perempuan" value="Wanita">
+            </fieldset><br/>
+
+            <!-- <ul id="pendidikaninput" data-role="listview">
+             --><!-- <li><center><label for="Pendidikan">Data Pendidikan</label></center></li> -->
+
+            <fieldset class="ui-field-contain">
+                <label for="kategori">Pendidikan</label>
+                <select name="kategori" id="kategori" data-native-menu="false">
+                    <option>Jenjang Studi</option>
+                    <option name="s1" value="1">SMA</option>
+                    <option name="s1" value="2">Diploma</option>
+                    <option name="s1" value="3">Sarjana</option>
+                    <option name="s2" value="4">Master</option>
+                    <option name="s3" value="5">Doktor</option>
+                    <!--<option value="ilkom">Ilmu Komputer</option>
+                     <option value="kedokteran">Kedokteran</option>
+                     <option value="tekniksipil">Teknik Sipil</option>
+                     <option value="teknikindus">Teknik Industri</option>
+                     <option value="hukum">Hukum</option>
+                     <option value="antro">Antropologi</option-->
+                </select>
+            </fieldset>
+
+
+            <!--   <fieldset class="ui-field-contain">
+                   <label for="universitas">Universitas</label>
+                   <select name="universitas" id="universitas" data-native-menu="false">
+                     <option>Jenjang Studi</option>
+                     <option value="1">Universitas Brawijaya</option>
+                     <option value="2">Universitas Indonesia</option>
+                     <option value="3">Universitas Gajah Mada</option>
+                     <option  value="4">ITB</option>
+                     <option  value="5">ITS</option>
+                   </select>
+                 </fieldset> -->
+
+            <fieldset class="ui-field-contain">
+                <label for="universitas">Universitas</label>
+                <select name="universitas" id="universitas" data-native-menu="false">
+                    <option>Jenjang Studi</option>
+                    <option value="Universitas Brawijaya">Universitas Brawijaya</option>
+                    <option value="Universitas Indonesia">Universitas Indonesia</option>
+                    <option value="Universitas Gajah Mada">Universitas Gajah Mada</option>
+                    <option  value="ITB">ITB</option>
+                    <option  value="ITS">ITS</option>
+                </select>
+            </fieldset>
+
+
+
+            <!--  <div data-role="fieldcontain">
+              <label for="Universitas">Date of Birth:</label>
+              <ul data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Cari">
+                  <li data-filtertext="itb bandung Institut teknologi bandung."><option id="univ" value="ITB">ITB</option></li>
+                  <li data-filtertext="Brawijaya ub"><option  id="univ" value="Universitas Brawijaya">Universitas Brawijaya</option></li>
+              </ul>
+              </div> -->
+
+
+            <fieldset class="ui-field-contain">
+                <label for="program">Program Studi</label>
+                <select name="program" id="program" data-native-menu="false">
+                    <option>Program Studi</option>
+                    <option value="1">teknik informatika</option>
+                    <option value="2" >Komputer</option>
+                    <option value="3" >Economics</option>
+                    <option value="4" >teknik Komputer</option>
+                </select>
+            </fieldset>
+
+
+            <input type="submit" id="submitbio" value="submit">
+
+
+
+        </form><br>
+    </div>
+</div>
+<script type="text/javascript" charset="utf-8" src="cordova-2.4.0.js"></script>
+<script src="js/jquery.min.js"></script>              <!-- memanggil script js jquery min-->
+<script src="js/jquery.mobile-1.4.2.min.js"></script>       <!-- memanggil script js jquery mobile.css-->
+<script src="js/daftarbio.js"></script>
+</body>
+</html>

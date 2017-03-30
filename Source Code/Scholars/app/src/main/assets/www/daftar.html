@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>TEST HYBRID</title>
+	<script type="text/javascript" charset="utf-8" src="cordova-2.4.0.js"></script> <!-- memanggil script cordova/phonegap-->
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css"/> <!-- memanggil jquery mobile.css-->
+
+</head>
+
+<body>
+<div data-role="page" id="login">
+
+	<!--bagian page login dokumen htmlnya -->
+
+	<div data-role="header" data-position="fixed" data-theme="a">
+		<!-- <a href="index.html" class="ui-btn ui-corner-all ui-icon-back ui-inline ui-btn-icon-notext"></a> -->
+		<a href="#" data-direction="reverse" data-rel="back" class="ui-btn ui-corner-all ui-icon-back ui-inline ui-btn-icon-notext"></a>
+		<h1> Daftar Form </h1>
+	</div>
+
+	<!-- bagian konten login htmlnya -->
+
+	<div data-role="main" class="ui-content">
+		<form method="POST" id="login" name="login" >
+			<div class="ui-field-contain">
+				<center>
+					<label for="userid" class="ui-hidden-accessible">username:</label>
+					<input type="text" name="userid" id="userid" placeholder="username"data-clear-btn="true">
+					<label for="email"class="ui-hidden-accessible" >E-mail:</label>
+					<input type="email" name="email" id="email" placeholder="Email">
+					<label for="pass" class="ui-hidden-accessible">password:</label>
+					<input type="password" name="pass" id="pass" placeholder="password" data-clear-btn="true">
+
+					<!-- <fieldset data-role="controlgroup" data-type="horizontal">
+		            <legend>Tanggal Lahir : </legend>
+		            <label for="day">Select Day</label>
+		            <select name="day" id="day">
+		              <option value="mon">Monday</option>
+		              <option value="tue">Tuesday</option>
+		              <option value="wed">Wednesday</option>
+		              <option value="thu">Thursday</option>
+		              <option value="fri">Friday</option>
+		              <option value="sat">Saturday</option>
+		              <option value="sun">Sunday</option>
+		            </select>
+		            
+				    <label for="time">Select Mont</label>
+		            <select name="time" id="time">
+		              <option value="1">1</option>
+		              <option value="2">2</option>
+		              <option value="3">3</option>
+		              <option value="4">4</option>
+		              <option value="5">5</option>
+		              <option value="6">6</option>
+		              <option value="7">7</option>
+		              <option value="8">8</option>
+		              <option value="9">9</option>
+		            </select>
+		            
+		            <label for="day">Select Year</label>
+		            <select name="day" id="day">
+		              <option value="1992">1992</option>
+		              <option value="1993">1993</option>
+		              <option value="1994">1994</option>
+		              
+		            </select>
+		        </fieldset> <br>
+				
+				<fieldset data-role="controlgroup">
+			      <legend>Gender Kamu : </legend>
+			        <label for="male">Male</label>
+			        <input type="radio" name="gender" data-inline="true" id="male" value="male" >
+			        <label for="female">Female</label>
+			        <input type="radio" name="gender" data-inline="true" id="female" value="female" >	
+			      </fieldset>
+					
+					<fieldset class="ui-field-contain">
+        <label for="day">Pekerjaan</label>
+        <select name="day" id="day" data-native-menu="false">
+          <option value="Pelajar">Pelajar</option>
+          <option value="Mahasiswa">Mahasiswa</option>
+          
+        </select>
+      </fieldset> -->
+					<input type="submit" id="submitid" value="submit">
+					<center>
+			</div>
+		</form>
+
+		<div id="error">&nbsp;</div>
+	</div>
+</div>
+</div>
+</div>
+
+<br clear="all" /><br clear="all" /><br clear="all" />
+<br clear="all" />
+</div>
+
+</div>
+<script src="js/jquery.min.js"></script>							<!-- memanggil script js jquery min-->
+<script src="js/jquery.mobile-1.4.2.min.js"></script>				<!-- memanggil script js jquery mobile.css-->
+<script src="js/daftar.js"></script>
+<script src="js/daftarbio.js"></script>
+</body>
+</html>

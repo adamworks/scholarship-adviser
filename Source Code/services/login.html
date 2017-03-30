@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>TEST HYBRID</title>
+	<script type="text/javascript" charset="utf-8" src="cordova-2.4.0.js"></script> <!-- memanggil script cordova/phonegap-->
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css"/> <!-- memanggil jquery mobile.css-->
+	<script src="jquery.js"></script>							<!-- memanggil script js jquery min-->
+	<script src="js/jquery.mobile-1.4.2.min.js"></script>				<!-- memanggil script js jquery mobile.css-->
+	<script type="text/javascript">
+	function check_login()
+{
+    //Mengambil value dari input username & Password
+    var username = $('#txt_username').val();
+    var password = $('#txt_password').val();
+    //Ubah alamat url berikut, sesuaikan dengan alamat script pada komputer anda
+    var url_login    = 'http://localhost/skripsiku/scholar/Scholarapp/services/login.php';
+    var url_admin    = 'http://localhost/skripsiku/scholar/Scholarapp/services/admin.php';
+     
+    //Ubah tulisan pada button saat click login
+    //$('#btnLogin').attr('value','Silahkan tunggu ...');
+     
+    //Gunakan jquery AJAX
+    $.ajax({
+        url     : url_login,
+        //mengirimkan username dan password ke script login.php
+        data    : 'var_usn='+username+'&var_pwd='+password, 
+        //Method pengiriman
+        type    : 'POST',
+        //Data yang akan diambil dari script pemroses
+        dataType: 'html',
+        //Respon jika data berhasil dikirim
+        success : function(pesan){
+            if(pesan=='ok'){
+                //Arahkan ke halaman admin jika script pemroses mencetak kata ok
+                window.location = url_admin;
+            }
+            else{
+                //Cetak peringatan untuk username & password salah
+                alert(pesan);
+                //$('#btnLogin').attr('value','Coba lagi ...');
+            }
+        },
+    });
+}
+</script>
+
+</head>
+
+<body>
+	<div data-role="page" id="login">
+		
+		<!--bagian page login dokumen htmlnya -->
+		
+		<div data-role="header" data-position="fixed" data-theme="a">
+		<a href="index.html" class="ui-btn ui-corner-all ui-icon-back ui-inline ui-btn-icon-notext"></a>
+		<h1> Login Form </h1>
+		</div>
+	
+		<!-- bagian konten login htmlnya -->
+	
+		<div data-role="main" class="ui-content">
+			<!--form method="POST" id="login" name="login" >
+				<div class="ui-field-contain">
+					<!--center>
+					<label for="userid" class="ui-hidden-accessible">username:</label>
+					<input type="text" name="userid" id="userid" placeholder="username"data-clear-btn="true">
+					<label for="pass" class="ui-hidden-accessible">password:</label>
+					<input type="text" name="pass" id="pass" placeholder="password" data-clear-btn="true">
+				<input type="submit" id="submitid" value="login" onclick="check_login()"/-->
+
+				<center>
+					<label for="userid" class="ui-hidden-accessible">username:</label>
+					<input type="text" name="userid" id="txt_username" placeholder="username"data-clear-btn="true"/>
+					<label for="pass" class="ui-hidden-accessible">password:</label>
+					<input type="password" name="pass" id="txt_password" placeholder="password" data-clear-btn="true"/>
+				<input type="button" id="btnLogin" value="login" onclick="check_login();"/>
+
+				</center>	
+				</div>
+		</div>
+		
+	</div>
+	
+</body>
+</html>
